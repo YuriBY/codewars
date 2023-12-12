@@ -6,23 +6,16 @@
 
 
 function order(words){
-    let newOrder = words.split(' ');
-    const myArray = new Array(newOrder.length).fill(0);    
-    for (let i = 0; i < newOrder.length; i++) {
-        let tempArr = newOrder[i].split('');
-        for (let x = 0; x < tempArr.length; x++) {
-            if (Number(tempArr[x])) {
-                myArray.splice(Number(tempArr[x]) - 1, 1, newOrder[i])
-            }
+    var array = words.split(' ');
+    var sortedArray = [];
+    for(i = 0; i <= array.length; i++) {
+      for(j = 0; j < array.length; j++) {
+        if(array[j].indexOf(i) >= 0) {
+          sortedArray.push(array[j]);
         }
+      }
     }
-    if (words) {
-        return myArray.join(' ')
-    } else {
-        return ''
-    }
-    
-    
-  };
+    return sortedArray.join(' ');
+  }
 
 console.log(order("4of Fo1r pe6ople g3ood th5e the2"));
